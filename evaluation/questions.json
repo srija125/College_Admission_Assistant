@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What courses are available?",
+        "expected_answer": "The available courses are listed in the college admission information."
+    },
+    {
+        "question": "What documents are required for admission?",
+        "expected_answer": "The required admission documents are listed in the college admission information."
+    },
+    {
+        "question": "What scholarships are available?",
+        "expected_answer": "The college provides scholarship opportunities such as merit scholarships."
+    },
+    {
+        "question": "What are the admission requirements?",
+        "expected_answer": "The admission requirements are specified in the college admission information."
+    },
+    {
+        "question": "What is the fee structure?",
+        "expected_answer": "The fee structure is provided in the college admission information."
+    }
+]
