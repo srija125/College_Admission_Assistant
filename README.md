@@ -37,9 +37,9 @@ College Admission Documents
             ↓
      Streamlit Chat UI
 
-     📁 Project Structure
+##📁 Project Structure
 
-     college_admission_assistant/
+ college_admission_assistant/
 │
 ├── data/
 │   └── raw/
@@ -61,6 +61,7 @@ College Admission Documents
 └── README.md
 
 🛠️ Technologies Used
+
 Python
 LangChain
 Hugging Face
@@ -70,6 +71,7 @@ Sentence Transformers
 RAG
 Vector Embeddings
 Semantic Search
+
 ⚙️ Installation
 
 Clone the repository:
@@ -88,6 +90,7 @@ venv\Scripts\activate
 Install dependencies:
 
 pip install -r requirements.txt
+
 📌 Create Vector Database
 
 Run the ingestion pipeline:
@@ -130,6 +133,7 @@ Multilingual chatbot
 Voice-based interaction
 Cloud deployment
 Authentication and user profiles
+
 🎯 Use Cases
 
 The same RAG architecture can be adapted for:
