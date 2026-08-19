@@ -1,72 +1,49 @@
-# 🎓 College Admission RAG Chatbot
+# 🎓 College Admission Assistant
 
-## 1. Project Overview
+An AI-powered College Admission RAG Chatbot that provides context-aware answers to admission-related questions using Retrieval-Augmented Generation (RAG).
 
-The College Admission RAG Chatbot is an AI-powered question-answering
-system designed to provide accurate information about college admission.
+## 🚀 Features
 
-The system uses Retrieval-Augmented Generation (RAG) to retrieve relevant
-information from college admission documents and generate grounded answers.
+- 🤖 AI-powered admission assistant
+- 🔎 Semantic document search
+- 📚 Retrieval-Augmented Generation (RAG)
+- 🧠 Hugging Face embeddings
+- 🗄️ ChromaDB vector database
+- 🔄 Document chunking and indexing
+- 🎯 Reranking for improved retrieval
+- 💬 ChatGPT-style Streamlit interface
+- 📖 Source/context display
+- 📊 Retrieval evaluation
+- 🔐 Environment variable support for API secrets
 
----
+## 🏗️ Architecture
 
-## 2. Objectives
+```text
+College Admission Documents
+            ↓
+      Text Loader
+            ↓
+    Text Chunking
+            ↓
+     Embeddings
+            ↓
+       ChromaDB
+            ↓
+     Query Retrieval
+            ↓
+       Reranking
+            ↓
+     RAG Generation
+            ↓
+     Streamlit Chat UI
 
-- Provide admission-related information through a chatbot.
-- Retrieve relevant information from college documents.
-- Reduce hallucination by grounding answers in retrieved context.
-- Use semantic and keyword-based retrieval.
-- Improve retrieval using a reranking model.
-- Provide an interactive Streamlit interface.
+     📁 Project Structure
 
----
-
-## 3. Technologies Used
-
-- Python
-- LangChain
-- LangChain Community
-- LangChain Ollama
-- ChromaDB
-- BM25
-- Sentence Transformers
-- Cross-Encoder
-- Ollama
-- Streamlit
-- Scikit-learn
-- NumPy
-- Pandas
-
----
-
-## 4. System Architecture
-
-The system follows the following RAG pipeline:
-
-User Question
-        ↓
-Hybrid Retrieval
-        ↓
-ChromaDB + BM25
-        ↓
-Cross-Encoder Reranking
-        ↓
-Top Relevant Documents
-        ↓
-LangChain Prompt
-        ↓
-Ollama LLM
-        ↓
-Final Answer
-
----
-
-## 5. Project Structure
-
-college_admission_assistant/
-
+     college_admission_assistant/
+│
 ├── data/
-│   └── college_admission.txt
+│   └── raw/
+│       └── college_admission.txt
 │
 ├── src/
 │   ├── ingestion.py
@@ -78,52 +55,98 @@ college_admission_assistant/
 │   ├── evaluation.py
 │   └── questions.json
 │
-├── chroma_db/
 ├── streamlit_app.py
 ├── requirements.txt
+├── .gitignore
 └── README.md
 
----
+🛠️ Technologies Used
+Python
+LangChain
+Hugging Face
+ChromaDB
+Streamlit
+Sentence Transformers
+RAG
+Vector Embeddings
+Semantic Search
+⚙️ Installation
 
-## 6. RAG Pipeline
+Clone the repository:
 
-### Document Ingestion
-
-The admission document is loaded and divided into smaller chunks.
-
-### Embedding Generation
-
-The text chunks are converted into numerical vector representations.
-
-### Vector Database
-
-The embeddings are stored in ChromaDB for semantic similarity search.
-
-### BM25 Retrieval
-
-BM25 is used for keyword-based retrieval.
-
-### Hybrid Retrieval
-
-Semantic retrieval and BM25 retrieval are combined to improve search quality.
-
-### Reranking
-
-A Cross-Encoder model reranks the retrieved documents according to
-their relevance to the user's question.
-
-### Answer Generation
-
-The top relevant documents are provided as context to an Ollama LLM
-through LangChain.
-
-The LLM generates the final answer using the retrieved context.
-
----
-
-## 7. Installation
+git clone https://github.com/srija125/College_Admission_Assistant.git
+cd College_Admission_Assistant
 
 Create a virtual environment:
 
-```bash
 python -m venv venv
+
+Activate it on Windows:
+
+venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+📌 Create Vector Database
+
+Run the ingestion pipeline:
+
+python src/ingestion.py
+
+This loads the college admission document, creates chunks, generates embeddings, and stores them in ChromaDB.
+
+▶️ Run the Application
+
+Start the Streamlit application:
+
+streamlit run streamlit_app.py
+
+The application will open in your browser.
+
+🧪 Evaluation
+
+The project includes an evaluation module to test retrieval performance using predefined admission-related questions.
+
+python evaluation/evaluation.py
+🔐 Environment Variables
+
+Store API keys and secrets in environment variables or Streamlit secrets.
+
+Example:
+
+.env
+.streamlit/secrets.toml
+
+Do not upload API keys or passwords to GitHub.
+
+🔮 Future Improvements
+Multi-college support
+College comparison
+Admission deadline tracking
+Course recommendation
+Scholarship information
+Multilingual chatbot
+Voice-based interaction
+Cloud deployment
+Authentication and user profiles
+🎯 Use Cases
+
+The same RAG architecture can be adapted for:
+
+Healthcare document assistants
+Banking and financial assistants
+Legal document assistants
+Education assistants
+HR assistants
+Customer support systems
+
+Only the domain-specific documents, prompts, and business logic need to be changed.
+
+👩‍💻 Author
+
+Srija Tanti
+
+B.Tech CSE (AI & ML)
+
+⭐ If you find this project useful, consider giving it a star!
